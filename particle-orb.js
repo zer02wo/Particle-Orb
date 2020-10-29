@@ -7,9 +7,12 @@ let lifespan = 3;
 //Parallax movement of particle cluster on mouse movement
 window.addEventListener("mousemove", function(e) {
     if(lifespan > 0) {
+        //Calculate parllax aspect ratio factor
+        let widthAspect = (window.innerWidth / window.innerHeight);
+        let heightAspect = (window.innerHeight / window.innerWidth);
         //Calculate parallax shift from window size and mouse position
-        let widthParallax = ((window.innerWidth / 2) - e.x) / 160;
-        let heightParallax = ((window.innerHeight / 2) - e.y) / 90;
+        let widthParallax = ((window.innerWidth / 2) - e.x) / (100 * widthAspect);
+        let heightParallax = ((window.innerHeight / 2) - e.y) / (100 * heightAspect);
         //Apply parallax shift as difference from midpoint of screen
         particleContainer.style.left = (50 + widthParallax) + "%";
         particleContainer.style.top = (50 + heightParallax) + "%";
