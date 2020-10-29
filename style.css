@@ -5,6 +5,7 @@ html, body {
     height: 100%;
     width: 100%;
     background: black;
+    overflow: hidden;
 }
 
 #particle-container {
@@ -14,7 +15,7 @@ html, body {
     width: 0;
     height: 0;
     transform-style: preserve-3d;
-    animation: rotateOrb 15s infinite linear;
+    animation: rotateOrb 10s infinite linear;
 }
 
 @keyframes rotateOrb {
@@ -25,8 +26,9 @@ html, body {
 
 .particle {
     position: absolute;
-    width: 5px;
-    height: 5px;
+    width: 2.5px;
+    height: 2.5px;
     border-radius: 50%;
     background-color: #D72A28;
+    transition: transform 5s linear, opacity 5s ease-in-out;
 }
