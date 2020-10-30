@@ -2,14 +2,19 @@
 *{margin: 0; padding: 0; border: 0; outline: 0;}
 
 html, body {
-    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
     width: 100%;
     background: black;
     overflow: hidden;
+    user-select: none;
 }
 
 #particle-container {
-    position: relative;
+    position: absolute;
     left: 50%;
     top: 50%;
     width: 0;
@@ -31,4 +36,256 @@ html, body {
     border-radius: 50%;
     background-color: #D72A28;
     transition: transform 5s linear, opacity 5s ease-in-out;
+}
+
+#siva-logo {
+    position: absolute;
+    top: 82.5%;
+    left: 92.5%;
+    width: 7.5%;
+    pointer-events: none;
+}
+
+#siva-text {
+    position: relative;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 75px;
+    color: #D72A28;
+    animation: skew .5s infinite linear alternate-reverse;
+}
+/*Chromatic aberration component*/
+#siva-text::before {
+    content: "~ CONSUME ENHANCE REPLICATE ~";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 2px;
+    text-shadow: -2px 0 #000;
+    clip-path: polygon(0 60%, 120% 0, 0 75%, 0 0);
+    animation: glitch 5s infinite linear alternate-reverse;
+}
+/*Chromatic aberration component*/
+#siva-text::after {
+    content: "~ CONSUME ENHANCE REPLICATE ~";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: -2px;
+    text-shadow: -2px 0 #2B2B2B, 2px 2px #000;
+    animation: glitch-alt 2s infinite linear alternate-reverse;
+}
+
+/*Randomly generated skew keyframes*/
+@keyframes skew {
+    0% {
+        transform: skew(5deg);
+    }
+    10% {
+        transform: skew(-1deg);
+    }
+    20% {
+        transform: skew(-4deg);
+    }
+    30% {
+        transform: skew(3deg);
+    }
+    40% {
+        transform: skew(-4deg);
+    }
+    50% {
+        transform: skew(1deg);
+    }
+    60% {
+        transform: skew(4deg);
+    }
+    70% {
+        transform: skew(-1deg);
+    }
+    80% {
+        transform: skew(5deg);
+    }
+    90% {
+        transform: skew(-3deg);
+    }
+    100% {
+        transform: skew(4deg);
+    }
+}
+
+/*Randomly generated skew and clip-path keyframes*/
+@keyframes glitch {
+    0% {
+        clip-path: polygon(0 65%, 200% 0, 0 70%, 0 0);
+        transform: skew(0.25deg);
+    }
+    5% {
+        clip-path: polygon(0 37%, 200% 0, 0 13%, 0 0);
+        transform: skew(0.97deg);
+    }
+    10% {
+        clip-path: polygon(0 64%, 200% 0, 0 44%, 0 0);
+        transform: skew(0.82deg);
+    }
+    15% {
+        clip-path: polygon(0 4%, 200% 0, 0 30%, 0 0);
+        transform: skew(0.81deg);
+    }
+    20% {
+        clip-path: polygon(0 29%, 200% 0, 0 73%, 0 0);
+        transform: skew(0.08deg);
+    }
+    25% {
+        clip-path: polygon(0 85%, 200% 0, 0 92%, 0 0);
+        transform: skew(0.22deg);
+    }
+    30% {
+        clip-path: polygon(0 100%, 200% 0, 0 36%, 0 0);
+        transform: skew(0.03deg);
+    }
+    35% {
+        clip-path: polygon(0 68%, 200% 0, 0 20%, 0 0);
+        transform: skew(0.25deg);
+    }
+    40% {
+        clip-path: polygon(0 78%, 200% 0, 0 65%, 0 0);
+        transform: skew(0.08deg);
+    }
+    45% {
+        clip-path: polygon(0 15%, 200% 0, 0 68%, 0 0);
+        transform: skew(0.21deg);
+    }
+    50% {
+        clip-path: polygon(0 5%, 200% 0, 0 51%, 0 0);
+        transform: skew(0.56deg);
+    }
+    55% {
+        clip-path: polygon(0 4%, 200% 0, 0 18%, 0 0);
+        transform: skew(0.25deg);
+    }
+    60% {
+        clip-path: polygon(0 97%, 200% 0, 0 3%, 0 0);
+        transform: skew(0.18deg);
+    }
+    65% {
+        clip-path: polygon(0 77%, 200% 0, 0 74%, 0 0);
+        transform: skew(0.81deg);
+    }
+    70% {
+        clip-path: polygon(0 88%, 200% 0, 0 50%, 0 0);
+        transform: skew(0.28deg);
+    }
+    75% {
+        clip-path: polygon(0 61%, 200% 0, 0 59%, 0 0);
+        transform: skew(0.34deg);
+    }
+    80% {
+        clip-path: polygon(0 83%, 200% 0, 0 56%, 0 0);
+        transform: skew(0.21deg);
+    }
+    85% {
+        clip-path: polygon(0 20%, 200% 0, 0 64%, 0 0);
+        transform: skew(0.07deg);
+    }
+    90% {
+        clip-path: polygon(0 60%, 200% 0, 0 11%, 0 0);
+        transform: skew(0.43deg);
+    }
+    95% {
+        clip-path: polygon(0 59%, 200% 0, 0 4%, 0 0);
+        transform: skew(0.58deg);
+    }
+    100% {
+        clip-path: polygon(0 63%, 200% 0, 0 38%, 0 0);
+        transform: skew(0.56deg);
+    }
+}
+
+/*Second set of randomly generated skew and clip-path keyframes*/
+@keyframes glitch-alt {
+    0% {
+        clip-path: polygon(0 97%, 200% 0, 0 51%, 0 0);
+        transform: skew(0.58deg);
+    }
+    5% {
+        clip-path: polygon(0 43%, 200% 0, 0 9%, 0 0);
+        transform: skew(0.66deg);
+    }
+    10% {
+        clip-path: polygon(0 97%, 200% 0, 0 70%, 0 0);
+        transform: skew(0.5deg);
+    }
+    15% {
+        clip-path: polygon(0 48%, 200% 0, 0 87%, 0 0);
+        transform: skew(0.08deg);
+    }
+    20% {
+        clip-path: polygon(0 35%, 200% 0, 0 58%, 0 0);
+        transform: skew(0.46deg);
+    }
+    25% {
+        clip-path: polygon(0 2%, 200% 0, 0 49%, 0 0);
+        transform: skew(0.42deg);
+    }
+    30% {
+        clip-path: polygon(0 11%, 200% 0, 0 46%, 0 0);
+        transform: skew(0.84deg);
+    }
+    35% {
+        clip-path: polygon(0 92%, 200% 0, 0 52%, 0 0);
+        transform: skew(0.89deg);
+    }
+    40% {
+        clip-path: polygon(0 32%, 200% 0, 0 45%, 0 0);
+        transform: skew(0.29deg);
+    }
+    45% {
+        clip-path: polygon(0 16%, 200% 0, 0 34%, 0 0);
+        transform: skew(0.38deg);
+    }
+    50% {
+        clip-path: polygon(0 62%, 200% 0, 0 46%, 0 0);
+        transform: skew(0.77deg);
+    }
+    55% {
+        clip-path: polygon(0 84%, 200% 0, 0 62%, 0 0);
+        transform: skew(0.63deg);
+    }
+    60% {
+        clip-path: polygon(0 43%, 200% 0, 0 72%, 0 0);
+        transform: skew(0.32deg);
+    }
+    65% {
+      clip-path: polygon(0 54%, 200% 0, 0 93%, 0 0);
+      transform: skew(0.16deg);
+    }
+    70% {
+        clip-path: polygon(0 86%, 200% 0, 0 54%, 0 0);
+        transform: skew(0.73deg);
+    }
+    75% {
+        clip-path: polygon(0 2%, 200% 0, 0 88%, 0 0);
+        transform: skew(0.62deg);
+    }
+    80% {
+        clip-path: polygon(0 4%, 200% 0, 0 83%, 0 0);
+        transform: skew(1deg);
+    }
+    85% {
+        clip-path: polygon(0 66%, 200% 0, 0 91%, 0 0);
+        transform: skew(0.34deg);
+    }
+    90% {
+        clip-path: polygon(0 35%, 200% 0, 0 41%, 0 0);
+        transform: skew(0.25deg);
+    }
+    95% {
+        clip-path: polygon(0 6%, 200% 0, 0 95%, 0 0);
+        transform: skew(0.62deg);
+    }
+    100% {
+        clip-path: polygon(0 12%, 200% 0, 0 83%, 0 0);
+        transform: skew(0.51deg);
+    }
 }
