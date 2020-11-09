@@ -50,4 +50,4 @@ A weapon within *Destiny 2* displaying the swarming nature of the SIVA particles
 
 ## License
 
-[MIT](https://choosealicense.com/licenses/mit/)
+[MIT](LICENSE)
