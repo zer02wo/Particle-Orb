@@ -1,3 +1,5 @@
+<img src="images/Logo.png" alt="Particle Orb SIVA Logo" height="240">
+
 # Particle-Orb
 
 <img src="images/Animation.gif" alt="Project animation" height="400">
